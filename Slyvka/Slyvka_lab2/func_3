@@ -1,0 +1,3 @@
+function y = func_3(x)
+y = 7*x(1)^2 + 3*x(2) - 6
+end

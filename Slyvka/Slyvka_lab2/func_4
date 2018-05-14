@@ -1,0 +1,6 @@
+function f = func_4(pop)
+f = zeros(size(pop,1),1);
+for i = 1:size(pop,1)
+    x = pop(i,:);
+    f(i) = x(1)^2
+end
