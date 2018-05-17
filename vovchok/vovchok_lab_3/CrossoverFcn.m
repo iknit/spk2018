@@ -5,15 +5,11 @@ ret = zeros(length(parents)/2, nvars);
 for i = 1:2:length(parents)-1
     p1 = thisPopulation(parents(i), :);
     p2 = thisPopulation(parents(i+1), :);
-    t = randi(nvars);     % початок циклу (індекс)
-    %новий нащадок, який буде результатом схрещування двох хромосом
+    t = randi(nvars);    
     chilDD=zeros(1,nvars);
-    %переписуємо в нащадка гени 2 хромосоми до точки схрещування
     for j=1:1:t
         chilDD(j)=p2(j);
     end
-    %робимо перестановку в 1 батьку так, щоб гени після точки схрещування
-    %були першими в хромосомі
     pp1=zeros(1,nvars);
     counter=1;
     tamporalPtr=t+1;
@@ -25,7 +21,6 @@ for i = 1:2:length(parents)-1
         pp1(counter)=p1(j);
         counter=counter+1;
     end
-    %з копії 1го батька вилучини гени які вже є в нащадку
     for j=1:1:t
         for jj=1:1:nvars
             if ( pp1(jj)==chilDD(j))
